@@ -1,0 +1,11 @@
+SMARTHUB 
+Une plateforme backend qui permet :
+de gérer achats / ventes en ligne,
+de structurer des données ERP (clients, produits, factures),
+d’ouvrir la porte à : IA (analyse, recommandations),EDI (échanges normalisés),
+
+Phase 1 – Web API cœur métier (ce que tu fais maintenant)
+Phase 2 – Données & persistance (plus tard)
+Phase 3 – Front Angular
+Phase 4 – IA légère et EDI
+
