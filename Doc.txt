@@ -6,10 +6,33 @@ d’ouvrir la porte à : IA (analyse, recommandations),EDI (échanges normalisés),
 
 Phase 1 – Web API cœur métier (ce que tu fais maintenant)
 	Créer la couche Application
-	Définir les DTO
+		+CreateOrder
+		AddProductToOrder
+		GenerateInvoice
+		RegisterPayment
+
+	Définir les DTO (Jamais une entité Domain exposée directement)
+		CreateOrderRequestDto
+		OrderResponseDto
+		ProductDto
+		InvoiceDto
+
 	Créer l’API
+		À implémenter
+			Controllers
+			Endpoints REST
+			Mapping DTO <-> Application
+				Exemple : POST /api/orders et GET  /api/orders/{id}
+				AutoMapper (optionnel) ou mapping manuel (très apprécié en entretien)
+		Le contrôleur :
+			reçoit un DTO
+			appelle un service Application
+			retourne un DTO
 
 Phase 2 – Données & persistance (plus tard)
+	Implémentation des repositories
+	DbContext
+	Migrations
 Phase 3 – Front Angular
 Phase 4 – IA légère et EDI
 
