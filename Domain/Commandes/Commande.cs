@@ -22,6 +22,8 @@ public class Commande
     private readonly List<OrderLine> _lines = new();
     public IReadOnlyCollection<OrderLine> Lines => _lines.AsReadOnly();
 
+    protected Commande() { }
+
     public Commande(Guid clientId)
     {
         Id = Guid.NewGuid();
