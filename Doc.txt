@@ -1,38 +1,38 @@
 SMARTHUB 
 Une plateforme backend qui permet :
-de gérer achats / ventes en ligne,
-de structurer des données ERP (clients, produits, factures),
-d’ouvrir la porte à : IA (analyse, recommandations),EDI (échanges normalisés),
+de gÃ©rer achats / ventes en ligne,
+de structurer des donnÃ©es ERP (clients, produits, factures),
+d'ouvrir la porte Ã  : IA (analyse, recommandations),EDI (Ã©changes normalisÃ©s),
 
-Phase 1 – Web API cœur métier (ce que tu fais maintenant)
-	Créer la couche Application
+Phase 1 : Web API coeur mÃ©tier (ce que tu fais maintenant)
+	CrÃ©er la couche Application
 		+CreateOrder
 		AddProductToOrder
 		GenerateInvoice
 		RegisterPayment
 
-	Définir les DTO (Jamais une entité Domain exposée directement)
+	DÃ©finir les DTO (Jamais une entitÃ© Domain exposÃ©e directement)
 		CreateOrderRequestDto
 		OrderResponseDto
 		ProductDto
 		InvoiceDto
 
-	Créer l’API
-		À implémenter
+	CrÃ©er l'API
+		ImplÃ©menter
 			Controllers
 			Endpoints REST
 			Mapping DTO <-> Application
 				Exemple : POST /api/orders et GET  /api/orders/{id}
-				AutoMapper (optionnel) ou mapping manuel (très apprécié en entretien)
-		Le contrôleur :
-			reçoit un DTO
+				AutoMapper (optionnel) ou mapping manuel (trÃ¨s apprÃ©ciÃ© en entretien)
+		Le contrÃ´leur :
+			reÃ§oit un DTO
 			appelle un service Application
 			retourne un DTO
 
-Phase 2 – Données & persistance (plus tard)
-	Implémentation des repositories
+Phase 2 : DonnÃ©es & persistance (plus tard)
+	ImplÃ©mentation des repositories
 	DbContext
 	Migrations
-Phase 3 – Front Angular
-Phase 4 – IA légère et EDI
+Phase 3 : Front Angular
+Phase 4 : IA lÃ©gÃ¨re et EDI
 
