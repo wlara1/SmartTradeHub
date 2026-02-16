@@ -12,6 +12,7 @@
 
   <ItemGroup>
   <ProjectReference Include="..\Application\SmartTradeHubApplication.csproj" />
+  <ProjectReference Include="..\SmartTradeHub.Infrastructure\SmartTradeHub.Infrastructure.csproj" />
 </ItemGroup>
 
 </Project>
