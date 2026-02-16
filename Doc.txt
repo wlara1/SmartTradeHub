@@ -41,6 +41,48 @@ Phase 2 : Données & persistance (plus tard)
 	+Créer le DbContext
 	+Créer le Use Case GetOrder
 	Migrations
+[ PARENTHÈSE BUREAU :
+	§ : l'API sera prête à créer et enregistrer des commandes si :
+•	l’application démarre correctement et la chaîne de connexion DefaultConnection est configurée dans appsettings.json,
+•	la base de données existe ou les migrations EF Core ont été appliquées,
+Exemple Postman (étapes)
+1.	Démarrez l’API depuis Visual Studio (F5 ou Ctrl+F5) et notez l’URL affichée (ex. https://localhost:7243).
+2.	Ouvrez Postman → New Request.
+3.	Méthode : POST
+4.	URL : https://localhost:7243/api/orders (remplacez par l’URL de votre instance)
+5.	Headers :
+•	Content-Type: application/json
+6.	Body → raw → JSON :
+{
+  "customerId": "b3f1c9d2-4a6a-4f2b-9a0d-1e2f3a4b5c6d",
+  "lines": [
+    {
+      "productId": "11111111-1111-1111-1111-111111111111",
+      "unitPrice": 12.5,
+      "quantity": 2,
+      "vatRate": 0.20
+    },
+    {
+      "productId": "22222222-2222-2222-2222-222222222222",
+      "unitPrice": 7.0,
+      "quantity": 1,
+      "vatRate": 0.20
+    }
+  ]
+}
+
+Points d’attention et dépannage rapide
+•	Si vous recevez une erreur 500 liée à EF Core, vérifiez la chaîne de connexion dans appsettings.json et appliquez les migrations.
+•	Commandes utiles (exécutées depuis la racine du repo) pour créer/appliquer les migrations (si nécessaire) :
+•	Ajouter une migration :
+•	dotnet ef migrations add InitialCreate --project SmartTradeHub.Infrastructure --startup-project API/SmartTradeHub.Api.csproj
+•	Mettre à jour la base :
+•	dotnet ef database update --project SmartTradeHub.Infrastructure --startup-project API/SmartTradeHub.Api.csproj
+•	Si vous obtenez une erreur de liaison modèle, vérifiez les noms/typage des propriétés dans CreateOrderRequestDto (majuscules/minuscules, types GUID/decimal/int).
+•	Les GUIDs customerId et productId doivent être valides.
+]
+
 Phase 3 : Front Angular
 Phase 4 : IA légère et EDI
+
 
