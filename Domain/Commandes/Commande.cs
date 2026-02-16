@@ -43,6 +43,9 @@ public class Commande
         RecalculateTotals();
     }
 
+    public decimal GetTotal()
+        => _lines.Sum(l => l.UnitPriceHT * l.Quantity);
+
     public void Confirm()
     {
         if (!_lines.Any())

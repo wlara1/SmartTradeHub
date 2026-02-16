@@ -22,7 +22,7 @@ namespace SmartTradeHubApplication.Orders.Create
 
             foreach (var line in command.Lines)
             {
-                order.AddLine(line.ProductId, line.Quantity, line.UnitPrice,  line.VatRate);
+                order.AddLine(line.ProductId, line.Quantity, line.UnitPrice, line.VatRate);
             }
 
             await _orderRepository.AddAsync(order);

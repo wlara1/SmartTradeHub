@@ -5,13 +5,16 @@ de structurer des données ERP (clients, produits, factures),
 d'ouvrir la porte à : IA (analyse, recommandations),EDI (échanges normalisés),
 
 Phase 1 : Web API coeur métier (ce que tu fais maintenant)
-	Créer la couche Application
+	
+	Domain
+
+	* Créer la couche Application : Rôle : orchestrer les cas d’usage
 		+CreateOrder
 		AddProductToOrder
 		GenerateInvoice
 		RegisterPayment
 
-	Définir les DTO (Jamais une entité Domain exposée directement)
+	* Définir les DTO (Jamais une entité Domain exposée directement)
 		CreateOrderRequestDto
 		OrderResponseDto
 		ProductDto
@@ -30,8 +33,13 @@ Phase 1 : Web API coeur métier (ce que tu fais maintenant)
 			retourne un DTO
 
 Phase 2 : Données & persistance (plus tard)
+	Installer Entity Framework Core: 
+	 dotnet add package Microsoft.EntityFrameworkCore --version 8.*	
+	 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 8.*
+	 dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.*
 	Implémentation des repositories
-	DbContext
+	+Créer le DbContext
+	+Créer le Use Case GetOrder
 	Migrations
 Phase 3 : Front Angular
 Phase 4 : IA légère et EDI
