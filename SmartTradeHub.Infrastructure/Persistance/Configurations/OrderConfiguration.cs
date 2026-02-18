@@ -16,7 +16,8 @@ namespace SmartTradeHub.Infrastructure.Persistance.Configurations
             builder.Property(o => o.Status)
                    .HasConversion<string>();
 
-            builder.HasMany(typeof(OrderLine), "_lines")
+            // Use the property-based mapping so EF Core won't try to map the same backing field twice
+            builder.HasMany(o => o.Lines)
                    .WithOne()
                    .HasForeignKey("OrderId");
         }

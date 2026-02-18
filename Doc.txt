@@ -40,7 +40,9 @@ Phase 2 : Données & persistance (plus tard)
 	Implémentation des repositories
 	+Créer le DbContext
 	+Créer le Use Case GetOrder
-	Migrations
+	Migrations : 
+		•	Ajouter une migration : dotnet ef migrations add InitialCreate --project SmartTradeHub.Infrastructure --startup-project API/SmartTradeHub.Api.csproj --context SmartTradeHubDbContext
+		•	Appliquer les migrations sur la base de données : dotnet ef database update --project SmartTradeHub.Infrastructure --startup-project API/SmartTradeHub.Api.csproj --context SmartTradeHubDbContext
 [ PARENTHÈSE BUREAU :
 	§ : l'API sera prête à créer et enregistrer des commandes si :
 •	l’application démarre correctement et la chaîne de connexion DefaultConnection est configurée dans appsettings.json,
