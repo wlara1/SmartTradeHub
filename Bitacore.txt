@@ -85,6 +85,9 @@ Points d’attention et dépannage rapide
 ]
 
 Phase 3 : Front Angular
+	J'ai créé une application Angular (SmartTradeHub.Client) pour consommer l'API
+	J'ai crée le service OrderService pour appeler les endpoints de l'API
+		ng generate service core/services/orders
 Phase 4 : IA légère et EDI
 
 
