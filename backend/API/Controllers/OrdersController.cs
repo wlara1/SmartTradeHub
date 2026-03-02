@@ -9,13 +9,16 @@ namespace SmartTradeHub.Api.Controllers
     [Route("api/orders")]
     public class OrdersController : ControllerBase
     {
+        // TODO: refactor...
         private readonly OrderService _orderService;
         private readonly GetOrderService _getOrderService;
+        private readonly GetOrdersService _getOrdersService;
 
-        public OrdersController(OrderService orderService, GetOrderService getOrderService)
+        public OrdersController(OrderService orderService, GetOrderService getOrderService, GetOrdersService getOrdersService)
         {
             _orderService = orderService;
             _getOrderService = getOrderService;
+            _getOrdersService = getOrdersService;
         }
 
         [HttpPost]
@@ -65,6 +68,22 @@ namespace SmartTradeHub.Api.Controllers
             };
 
             return Ok(dto);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var orders = await _getOrdersService.ExecuteAsync();
+
+            var result = orders.Select(o => new
+            {
+                o.Id,
+                o.ClientId,
+                Status = o.Status.ToString(),
+                Total = o.GetTotal()
+            });
+
+            return Ok(result);
         }
     }
 }

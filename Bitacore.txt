@@ -88,6 +88,11 @@ Phase 3 : Front Angular
 	J'ai créé une application Angular (SmartTradeHub.Client) pour consommer l'API
 	J'ai crée le service OrderService pour appeler les endpoints de l'API
 		ng generate service core/services/orders
+	Structure
+	Créer les modèles
+	Créer le service Angular
+		*N’oublie pas d’importer HttpClientModule dans app.config.ts ou app.module.ts
+
 Phase 4 : IA légère et EDI
 
 

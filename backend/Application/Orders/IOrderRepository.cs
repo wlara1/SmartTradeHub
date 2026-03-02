@@ -12,5 +12,7 @@ namespace SmartTradeHubApplication.Orders
         Task AddAsync(Commande order);
 
         Task<Commande?> GetByIdAsync(Guid id);
+
+        Task<List<Commande>> GetAllAsync();
     }
 }

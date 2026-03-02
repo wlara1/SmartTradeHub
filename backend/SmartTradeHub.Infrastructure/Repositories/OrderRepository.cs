@@ -23,8 +23,15 @@ namespace SmartTradeHub.Infrastructure.Repositories
         public async Task<Commande?> GetByIdAsync(Guid id)
         {
             return await _context.Orders
-                .Include("_lines")
+                .Include(o => o.Lines) // Corrige une erreur de chargement des lignes de commande
                 .FirstOrDefaultAsync(o => o.Id == id);
+        }
+
+        public async Task<List<Commande>> GetAllAsync()
+        {
+            return await _context.Orders
+                .Include(o => o.Lines)
+                .ToListAsync();
         }
     }
 }

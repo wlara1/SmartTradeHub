@@ -17,6 +17,19 @@ builder.Services.AddInfrastructure(builder.Configuration);
 //builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<OrderService>();
 builder.Services.AddScoped<GetOrderService>();
+builder.Services.AddScoped<GetOrdersService>();
+
+// Configure CORS to allow requests from the Angular frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngular",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
 
 var app = builder.Build();
 
@@ -32,5 +45,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("AllowAngular");
 
 app.Run();
