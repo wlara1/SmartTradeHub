@@ -9,5 +9,6 @@ export interface Order {
   customerId: string;
   status: string;
   total: number;
+  orderDate: string;
   lines: OrderLine[];
 }

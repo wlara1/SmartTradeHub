@@ -58,6 +58,7 @@ namespace SmartTradeHub.Api.Controllers
                 CustomerId = order.ClientId,
                 Status = order.Status.ToString(),
                 Total = order.GetTotal(),
+                OrderDate = order.OrderDate,
                 Lines = order.Lines.Select(l => new GetOrderLineDto
                 {
                     ProductId = l.ProduitId,
@@ -80,7 +81,8 @@ namespace SmartTradeHub.Api.Controllers
                 o.Id,
                 o.ClientId,
                 Status = o.Status.ToString(),
-                Total = o.GetTotal()
+                Total = o.GetTotal(),
+                OrderDate = o.OrderDate,
             });
 
             return Ok(result);
