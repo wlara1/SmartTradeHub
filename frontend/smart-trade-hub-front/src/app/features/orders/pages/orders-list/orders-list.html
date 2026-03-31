@@ -1,6 +1,7 @@
 <h2>Orders</h2>
 
-<table border="1" *ngIf="orders.length > 0">
+@if (orders.length > 0) {
+<table border="1">
   <thead>
     <tr>
       <th>Id</th>
@@ -10,15 +11,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let order of orders">
+    @for (order of orders; track order.id) {
+    <tr key={order.id}>
       <td>{{ order.id }}</td>
       <td>{{ order.status }}</td>
       <td>{{ order.total }}</td>
       <td>{{ order.orderDate }}</td>
     </tr>
+    }
   </tbody>
 </table>
+}
 
-<p *ngIf="orders.length === 0">
+@if (orders.length === 0) {
+<p>
   No orders found.
 </p>
+}

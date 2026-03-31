@@ -1,3 +1,8 @@
+Mon prochain pas est de faire le form de création de commande dans Angular et de consommer l’API que j’ai créée en ASP.NET Core.
+
+L'idée aujourd'hui est de consomer les API dispo dans mon projet (détail de commande et création de commande dans mon projet Angular) 
+Après passer à créer les autres cas d’usage (génération de facture, enregistrement de paiement) et implémenter la persistance avec Entity Framework Core (SQL Server)
+
 SMARTHUB 
 Une plateforme backend qui permet :
 de gérer achats / ventes en ligne,
