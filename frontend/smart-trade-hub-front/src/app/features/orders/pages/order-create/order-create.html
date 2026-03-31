@@ -1,0 +1,41 @@
+<h2>Créer une commande</h2>
+
+<form [formGroup]="orderForm" (ngSubmit)="submit()">
+
+  <div>
+    <label>Client</label>
+    <input formControlName="customerId">
+  </div>
+
+  <div>
+    <label>Date</label>
+    <input type="date" formControlName="orderDate">
+  </div>
+
+  <h3>Lignes de commande</h3>
+
+  <div formArrayName="lines">
+    @for (line of lines.controls; track $index; let i = $index) {
+    <div [formGroupName]="i">
+
+      <input placeholder="Produit" formControlName="productId">
+
+      <input type="number" placeholder="Quantité" formControlName="quantity">
+
+      <input type="number" placeholder="Prix unitaire" formControlName="unitPrice">
+
+      <input type="number" placeholder="TVA %" formControlName="tvaRate">
+
+      <button type="button" (click)="removeLine(i)">Supprimer</button>
+
+    </div>
+    }
+  </div>
+
+  <button type="button" (click)="addLine()">Ajouter une ligne</button>
+
+  <br><br>
+
+  <button type="submit">Créer la commande</button>
+
+</form>
