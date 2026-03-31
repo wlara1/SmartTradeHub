@@ -10,6 +10,8 @@ public class Produit
     public int StockQuantity { get; private set; }
     public bool IsActive { get; private set; }
 
+    protected Produit() { }
+
     public Produit(string name, string description, decimal priceHT, decimal vatRate, int stockQuantity)
     {
         Id = Guid.NewGuid();
