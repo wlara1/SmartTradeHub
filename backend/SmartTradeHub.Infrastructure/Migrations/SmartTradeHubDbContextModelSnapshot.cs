@@ -55,6 +55,208 @@ namespace SmartTradeHub.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Clients", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000001"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2025, 1, 15, 9, 12, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 720,
+                            Email = "marie.dupont@example.com",
+                            IsCompany = false,
+                            Name = "Marie Dupont"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000002"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2025, 2, 20, 11, 30, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 820,
+                            Email = "contact@technova.fr",
+                            IsCompany = true,
+                            Name = "Société TechNova"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000003"),
+                            Country = "Maroc",
+                            CreatedAt = new DateTime(2025, 3, 5, 14, 0, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 610,
+                            Email = "a.benali@example.ma",
+                            IsCompany = false,
+                            Name = "Ahmed Benali"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000004"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2025, 3, 22, 8, 45, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 760,
+                            Email = "laura.martin@example.com",
+                            IsCompany = false,
+                            Name = "Laura Martin"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000005"),
+                            Country = "Belgique",
+                            CreatedAt = new DateTime(2025, 4, 10, 10, 20, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 790,
+                            Email = "hello@lumina.com",
+                            IsCompany = true,
+                            Name = "Entreprise Lumina"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000006"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2025, 5, 2, 16, 10, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 680,
+                            Email = "julien.lefevre@example.com",
+                            IsCompany = false,
+                            Name = "Julien Lefevre"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000007"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2025, 6, 18, 9, 0, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 740,
+                            Email = "contact@horizon.agency",
+                            IsCompany = true,
+                            Name = "Agence Horizon"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000008"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2025, 7, 4, 12, 0, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 700,
+                            Email = "samantha.roy@example.com",
+                            IsCompany = false,
+                            Name = "Samantha Roy"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000009"),
+                            Country = "Suisse",
+                            CreatedAt = new DateTime(2025, 8, 12, 15, 30, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 835,
+                            Email = "contact@mille1.com",
+                            IsCompany = true,
+                            Name = "Mille et Une Solutions"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000a"),
+                            Country = "Côte d'Ivoire",
+                            CreatedAt = new DateTime(2025, 9, 1, 10, 5, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 590,
+                            Email = "oumar.traore@example.ci",
+                            IsCompany = false,
+                            Name = "Oumar Traoré"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000b"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2025, 9, 20, 11, 11, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 715,
+                            Email = "isabelle.moreau@example.com",
+                            IsCompany = false,
+                            Name = "Isabelle Moreau"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000c"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2025, 10, 5, 9, 45, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 670,
+                            Email = "contact@papeterielocale.fr",
+                            IsCompany = true,
+                            Name = "Papeterie Locale"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000d"),
+                            Country = "Portugal",
+                            CreatedAt = new DateTime(2025, 10, 28, 13, 0, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 730,
+                            Email = "c.mendes@example.pt",
+                            IsCompany = false,
+                            Name = "Carlos Mendes"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000e"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2025, 11, 15, 8, 30, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 650,
+                            Email = "atelier@bois-artisan.fr",
+                            IsCompany = true,
+                            Name = "Atelier Bois"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-00000000000f"),
+                            Country = "Tunisie",
+                            CreatedAt = new DateTime(2025, 12, 2, 17, 20, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 605,
+                            Email = "nadia.haddad@example.com",
+                            IsCompany = false,
+                            Name = "Nadia Haddad"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000010"),
+                            Country = "Luxembourg",
+                            CreatedAt = new DateTime(2026, 1, 8, 10, 10, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 780,
+                            Email = "events@global-events.com",
+                            IsCompany = true,
+                            Name = "Global Events SA"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000011"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2026, 1, 25, 14, 40, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 695,
+                            Email = "pierre.gauthier@example.com",
+                            IsCompany = false,
+                            Name = "Pierre Gauthier"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000012"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2026, 2, 11, 9, 0, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 710,
+                            Email = "admin@les-tilleuls.fr",
+                            IsCompany = true,
+                            Name = "Ecole Primaire Les Tilleuls"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000013"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2026, 3, 1, 8, 0, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 725,
+                            Email = "valerie.petit@example.com",
+                            IsCompany = false,
+                            Name = "Valérie Petit"
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000014"),
+                            Country = "France",
+                            CreatedAt = new DateTime(2026, 3, 15, 18, 30, 0, 0, DateTimeKind.Utc),
+                            CreditScore = 760,
+                            Email = "studio@lumiere.photo",
+                            IsCompany = true,
+                            Name = "Studio Photo Lumière"
+                        });
                 });
 
             modelBuilder.Entity("SmartTradeHub.Domain.Commandes.Commande", b =>
@@ -146,6 +348,208 @@ namespace SmartTradeHub.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("11111111-1111-1111-1111-000000000101"),
+                            Description = "Clavier mécanique rétroéclairé, switch tactile.",
+                            IsActive = true,
+                            Name = "Clavier mécanique K120",
+                            PriceHT = 59.90m,
+                            StockQuantity = 120,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("22222222-2222-2222-2222-000000000102"),
+                            Description = "Souris ergonomique, 2.4GHz et Bluetooth.",
+                            IsActive = true,
+                            Name = "Souris sans fil M55",
+                            PriceHT = 24.50m,
+                            StockQuantity = 200,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("33333333-3333-3333-3333-000000000103"),
+                            Description = "Moniteur 24 pouces, 1080p, 75Hz.",
+                            IsActive = true,
+                            Name = "Écran 24\" Full HD",
+                            PriceHT = 129.00m,
+                            StockQuantity = 45,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("44444444-4444-4444-4444-000000000104"),
+                            Description = "Casque circum-aural, réduction de bruit.",
+                            IsActive = true,
+                            Name = "Casque audio XPro",
+                            PriceHT = 89.99m,
+                            StockQuantity = 60,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("55555555-5555-5555-5555-000000000105"),
+                            Description = "Stockage NVMe haute performance 1TB.",
+                            IsActive = true,
+                            Name = "SSD 1To NVMe",
+                            PriceHT = 109.00m,
+                            StockQuantity = 80,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("66666666-6666-6666-6666-000000000106"),
+                            Description = "Lampe de bureau LED dimmable.",
+                            IsActive = true,
+                            Name = "Lampe de bureau LED",
+                            PriceHT = 29.90m,
+                            StockQuantity = 150,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("77777777-7777-7777-7777-000000000107"),
+                            Description = "Impression, scan et copie.",
+                            IsActive = true,
+                            Name = "Imprimante A4 multifonction",
+                            PriceHT = 149.50m,
+                            StockQuantity = 30,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("88888888-8888-8888-8888-000000000108"),
+                            Description = "Webcam avec micro intégré.",
+                            IsActive = true,
+                            Name = "Webcam HD 1080p",
+                            PriceHT = 39.95m,
+                            StockQuantity = 90,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("99999999-9999-9999-9999-000000000109"),
+                            Description = "Chaise de bureau ergonomique avec support lombaire.",
+                            IsActive = true,
+                            Name = "Chaise ergonomique Série B",
+                            PriceHT = 199.00m,
+                            StockQuantity = 25,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("aaaaaaaa-aaaa-aaaa-aaaa-00000000010a"),
+                            Description = "Hub aluminium, USB-C PD support.",
+                            IsActive = true,
+                            Name = "Hub USB-C 7 ports",
+                            PriceHT = 49.00m,
+                            StockQuantity = 70,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("bbbbbbbb-bbbb-bbbb-bbbb-00000000010b"),
+                            Description = "Dock Thunderbolt pour 4K et charge.",
+                            IsActive = true,
+                            Name = "Station d'accueil 4K",
+                            PriceHT = 229.00m,
+                            StockQuantity = 15,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("cccccccc-cccc-cccc-cccc-00000000010c"),
+                            Description = "Pad Qi rapide 15W.",
+                            IsActive = true,
+                            Name = "Chargeur sans fil 15W",
+                            PriceHT = 19.90m,
+                            StockQuantity = 140,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("dddddddd-dddd-dddd-dddd-00000000010d"),
+                            Description = "Sangle résistante pour sport.",
+                            IsActive = true,
+                            Name = "Sangle fitness",
+                            PriceHT = 12.50m,
+                            StockQuantity = 300,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("eeeeeeee-eeee-eeee-eeee-00000000010e"),
+                            Description = "Câble haute vitesse 2 mètres.",
+                            IsActive = true,
+                            Name = "Câble HDMI 2.1 - 2m",
+                            PriceHT = 14.99m,
+                            StockQuantity = 220,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("ffffffff-ffff-ffff-ffff-00000000010f"),
+                            Description = "Microphone cardioïde pour podcast.",
+                            IsActive = true,
+                            Name = "Microphone USB Studio",
+                            PriceHT = 79.90m,
+                            StockQuantity = 40,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("00000000-0000-0000-0000-000000000110"),
+                            Description = "Licence 1 an.",
+                            IsActive = true,
+                            Name = "Logiciel Antivirus Pro",
+                            PriceHT = 39.00m,
+                            StockQuantity = 1000,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("12121212-1212-1212-1212-000000000111"),
+                            Description = "Kit 32 pièces aimanté.",
+                            IsActive = true,
+                            Name = "Coffret tournevis 32 pcs",
+                            PriceHT = 22.00m,
+                            StockQuantity = 180,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("13131313-1313-1313-1313-000000000112"),
+                            Description = "Éclairage LED basse consommation.",
+                            IsActive = true,
+                            Name = "Réglette LED 120cm",
+                            PriceHT = 34.90m,
+                            StockQuantity = 65,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("14141414-1414-1414-1414-000000000113"),
+                            Description = "Routeur double bande, parental control.",
+                            IsActive = true,
+                            Name = "Routeur Wi-Fi AC1200",
+                            PriceHT = 59.00m,
+                            StockQuantity = 55,
+                            VatRate = 0.20m
+                        },
+                        new
+                        {
+                            Id = new Guid("15151515-1515-1515-1515-000000000114"),
+                            Description = "Table pliante 180x80cm, transport facile.",
+                            IsActive = true,
+                            Name = "Table de réunion pliable",
+                            PriceHT = 129.00m,
+                            StockQuantity = 10,
+                            VatRate = 0.20m
+                        });
                 });
 
             modelBuilder.Entity("SmartTradeHub.Domain.Commandes.OrderLine", b =>
