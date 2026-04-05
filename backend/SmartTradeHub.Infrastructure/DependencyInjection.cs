@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SmartTradeHub.Infrastructure.Persistance;
 using SmartTradeHub.Infrastructure.Repositories;
 using SmartTradeHubApplication.Orders;
+using SmartTradeHubApplication.Products;
 
 namespace SmartTradeHub.Infrastructure
 {
@@ -15,6 +16,8 @@ namespace SmartTradeHub.Infrastructure
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IOrderRepository, OrderRepository>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             return services;
         }

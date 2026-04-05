@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartTradeHubApplication.Orders.Create
 {
-    public class CreateOrderLineCommand
+    public class CreateOrderLineService
     {
         public Guid ProductId { get; init; }
         public decimal UnitPrice { get; init; }

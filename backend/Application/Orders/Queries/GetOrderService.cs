@@ -15,5 +15,9 @@ namespace SmartTradeHubApplication.Orders.Queries
         {
             return await _repository.GetByIdAsync(orderId);
         }
+        public async Task<List<Commande>> ExecuteAsync()
+        {
+            return await _repository.GetAllAsync();
+        }
     }
 }

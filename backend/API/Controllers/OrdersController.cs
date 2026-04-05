@@ -9,25 +9,22 @@ namespace SmartTradeHub.Api.Controllers
     [Route("api/orders")]
     public class OrdersController : ControllerBase
     {
-        // TODO: refactor...
         private readonly OrderService _orderService;
         private readonly GetOrderService _getOrderService;
-        private readonly GetOrdersService _getOrdersService;
 
-        public OrdersController(OrderService orderService, GetOrderService getOrderService, GetOrdersService getOrdersService)
+        public OrdersController(OrderService orderService, GetOrderService getOrderService)
         {
             _orderService = orderService;
             _getOrderService = getOrderService;
-            _getOrdersService = getOrdersService;
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(CreateOrderRequestDto dto)
         {
-            var command = new CreateOrderCommand
+            var command = new CreateOrderService
             {
                 CustomerId = dto.CustomerId,
-                Lines = dto.Lines.Select(l => new CreateOrderLineCommand
+                Lines = dto.Lines.Select(l => new CreateOrderLineService
                 {
                     ProductId = l.ProductId,
                     UnitPrice = l.UnitPrice,
@@ -74,7 +71,7 @@ namespace SmartTradeHub.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var orders = await _getOrdersService.ExecuteAsync();
+            var orders = await _getOrderService.ExecuteAsync();
 
             var result = orders.Select(o => new
             {
@@ -82,7 +79,7 @@ namespace SmartTradeHub.Api.Controllers
                 o.ClientId,
                 Status = o.Status.ToString(),
                 Total = o.GetTotal(),
-                OrderDate = o.OrderDate,
+                o.OrderDate,
             });
 
             return Ok(result);

@@ -16,7 +16,7 @@ namespace SmartTradeHubApplication.Orders.Create
             _orderRepository = orderRepository;
         }
 
-        public async Task<Guid> CreateOrderAsync(CreateOrderCommand command)
+        public async Task<Guid> CreateOrderAsync(CreateOrderService command)
         {
             var order = new Commande(command.CustomerId);
 

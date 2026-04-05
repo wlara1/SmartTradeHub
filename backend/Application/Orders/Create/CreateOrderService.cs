@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SmartTradeHubApplication.Orders.Create
 {
-    public class CreateOrderCommand
+    public class CreateOrderService
     {
         public Guid CustomerId { get; init; }
-        public List<CreateOrderLineCommand> Lines { get; init; } = new();
+        public List<CreateOrderLineService> Lines { get; init; } = new();
     }
 }

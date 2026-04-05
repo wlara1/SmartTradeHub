@@ -1,3 +1,24 @@
+05/04/2026
+Aujourd'hui, j'ai commencé à implémenter la Web API REST de SmartTradeHub
+
+Demain : pour produits
+- DTO
+- POST
+- TESTs unitaires
+- Mon planning de candidature
+
+en respectant une séparation claire entre Domain, Application et API
+
+31/03/2026
+
+Pour créer une Web API REST : 
+- Créer controller 
+
+J'ai reussi à envoyer mon premier post depuis Angular :
+Prochaines étape : 
+	-Détail de commande simple
+	+peupler ma bdd de Clients et produits
+
 Mon prochain pas est de faire le form de création de commande dans Angular et de consommer l’API que j’ai créée en ASP.NET Core.
 
 L'idée aujourd'hui est de consomer les API dispo dans mon projet (détail de commande et création de commande dans mon projet Angular) 

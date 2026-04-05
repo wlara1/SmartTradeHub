@@ -1,6 +1,7 @@
 using SmartTradeHub.Infrastructure;
 using SmartTradeHubApplication.Orders.Create;
 using SmartTradeHubApplication.Orders.Queries;
+using SmartTradeHubApplication.Products.Queries;
 ;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +18,7 @@ builder.Services.AddInfrastructure(builder.Configuration);
 //builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<OrderService>();
 builder.Services.AddScoped<GetOrderService>();
-builder.Services.AddScoped<GetOrdersService>();
+builder.Services.AddScoped<GetProductService>();
 
 // Configure CORS to allow requests from the Angular frontend
 builder.Services.AddCors(options =>
