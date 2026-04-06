@@ -16,7 +16,8 @@ namespace SmartTradeHub.Infrastructure.Repositories
 
         public Task AddAsync(Produit product)
         {
-            throw new NotImplementedException();
+            _context.Products.Add(product);
+            return _context.SaveChangesAsync();
         }
 
         public async Task<List<Produit>> GetAllAsync()
@@ -25,9 +26,9 @@ namespace SmartTradeHub.Infrastructure.Repositories
 
         }
 
-        public Task<Produit?> GetByIdAsync(Guid id)
+        public async Task<Produit?> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _context.Products.FindAsync(id);
         }
     }
 }

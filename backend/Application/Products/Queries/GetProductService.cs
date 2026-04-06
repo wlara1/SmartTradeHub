@@ -22,9 +22,9 @@ namespace SmartTradeHubApplication.Products.Queries
             return await _repository.GetAllAsync();
         }
 
-        public Task<Produit?> GetByIdAsync(Guid id)
+        public async Task<Produit?> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _repository.GetByIdAsync(id);
         }
     }
 }
