@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SmartTradeHub.Domain.Clients
+﻿namespace SmartTradeHub.Domain.Clients
 {
     public class Client
     {
@@ -15,6 +9,8 @@ namespace SmartTradeHub.Domain.Clients
         public bool IsCompany { get; private set; }
         public int CreditScore { get; private set; }
         public DateTime CreatedAt { get; private set; }
+
+        protected Client() { }
 
         public Client(string name, string email, string country, bool isCompany)
         {
