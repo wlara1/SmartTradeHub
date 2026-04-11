@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SmartTradeHub.Infrastructure.Persistance;
 using SmartTradeHub.Infrastructure.Repositories;
+using SmartTradeHubApplication.Client;
 using SmartTradeHubApplication.Orders;
 using SmartTradeHubApplication.Products;
 
@@ -18,6 +19,10 @@ namespace SmartTradeHub.Infrastructure
             services.AddScoped<IOrderRepository, OrderRepository>();
 
             services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IClientRepository, ClientRepository>();
+
+            services.AddScoped<IClientService, ClientService>();
 
             return services;
         }

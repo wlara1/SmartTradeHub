@@ -8,19 +8,26 @@ namespace SmartTradeHubApplication.Client
 {
     public class ClientService : IClientService
     {
+        private readonly IClientRepository _clientRepository;
+
+        public ClientService(IClientRepository clientRepository)
+        {
+            _clientRepository = clientRepository;
+        }
+
         public void Create(SmartTradeHub.Domain.Clients.Client client)
         {
             throw new NotImplementedException();
         }
 
-        public List<SmartTradeHub.Domain.Clients.Client> GetAll()
+        public async Task<List<SmartTradeHub.Domain.Clients.Client>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _clientRepository.GetAllAsync();
         }
 
-        public SmartTradeHub.Domain.Clients.Client GetById(int id)
+        public async Task<SmartTradeHub.Domain.Clients.Client?> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _clientRepository.GetByIdAsync(id);
         }
     }
 }

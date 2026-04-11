@@ -7,19 +7,32 @@ namespace SmartTradeHub.Api.Controllers
     [Route("api/clients")]
     public class ClientsController : ControllerBase
     {
-        private readonly ClientService _clientService; // Inject your client service here
+        private readonly IClientService _clientService; // Inject your client service here
 
-        public ClientsController(ClientService clientService)
+        public ClientsController(IClientService clientService)
         {
             _clientService = clientService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
             // Implementation for getting clients would go here
-            _clientService.GetAll();
-            return Ok();
+            var clients = await _clientService.GetAllAsync();
+            return Ok(clients);
+        }
+
+        [HttpGet("{id}")]
+
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            // Implementation for getting a client by ID would go here
+            var client = await _clientService.GetByIdAsync(id);
+            if (client == null)
+            {
+                return NotFound();
+            }
+            return Ok(client);
         }
     }
 }

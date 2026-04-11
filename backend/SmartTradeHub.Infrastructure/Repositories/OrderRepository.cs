@@ -1,37 +1,36 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SmartTradeHub.Domain.Commandes;
 using SmartTradeHub.Infrastructure.Persistance;
 using SmartTradeHubApplication.Orders;
-using SmartTradeHub.Domain.Commandes;
 
-namespace SmartTradeHub.Infrastructure.Repositories
+namespace SmartTradeHub.Infrastructure.Repositories;
+
+public class OrderRepository : IOrderRepository
 {
-    public class OrderRepository : IOrderRepository
+    private readonly SmartTradeHubDbContext _context;
+
+    public OrderRepository(SmartTradeHubDbContext context)
     {
-        private readonly SmartTradeHubDbContext _context;
+        _context = context;
+    }
 
-        public OrderRepository(SmartTradeHubDbContext context)
-        {
-            _context = context;
-        }
+    public async Task AddAsync(Commande order)
+    {
+        await _context.Orders.AddAsync(order);
+        await _context.SaveChangesAsync();
+    }
 
-        public async Task AddAsync(Commande order)
-        {
-            await _context.Orders.AddAsync(order);
-            await _context.SaveChangesAsync();
-        }
+    public async Task<Commande?> GetByIdAsync(Guid id)
+    {
+        return await _context.Orders
+            .Include(o => o.Lines) // Corrige une erreur de chargement des lignes de commande
+            .FirstOrDefaultAsync(o => o.Id == id);
+    }
 
-        public async Task<Commande?> GetByIdAsync(Guid id)
-        {
-            return await _context.Orders
-                .Include(o => o.Lines) // Corrige une erreur de chargement des lignes de commande
-                .FirstOrDefaultAsync(o => o.Id == id);
-        }
-
-        public async Task<List<Commande>> GetAllAsync()
-        {
-            return await _context.Orders
-                .Include(o => o.Lines)
-                .ToListAsync();
-        }
+    public async Task<List<Commande>> GetAllAsync()
+    {
+        return await _context.Orders
+            .Include(o => o.Lines)
+            .ToListAsync();
     }
 }
