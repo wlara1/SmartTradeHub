@@ -53,7 +53,7 @@ namespace SmartTradeHub.Api.Controllers
             {
                 Id = order.Id,
                 CustomerId = order.ClientId,
-                Status = order.Status.ToString(),
+                Status = (int)order.Status,
                 Total = order.GetTotal(),
                 OrderDate = order.OrderDate,
                 Lines = order.Lines.Select(l => new GetOrderLineDto
