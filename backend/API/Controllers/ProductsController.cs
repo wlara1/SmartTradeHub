@@ -8,7 +8,7 @@ using SmartTradeHubApplication.Products.Create;
 namespace SmartTradeHub.Api.Controllers
 {
     [ApiController]
-    [Route("api/products")]
+    [Route("api/[Controller]")]
     public class ProductsController : ControllerBase
     {
         private readonly GetProductService _getProductService;

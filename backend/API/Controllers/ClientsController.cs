@@ -4,7 +4,7 @@ using SmartTradeHubApplication.Client;
 namespace SmartTradeHub.Api.Controllers
 {
     [ApiController]
-    [Route("api/clients")]
+    [Route("api/[Controller]")]
     public class ClientsController : ControllerBase
     {
         private readonly IClientService _clientService; // Inject your client service here

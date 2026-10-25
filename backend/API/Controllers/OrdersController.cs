@@ -6,7 +6,7 @@ using SmartTradeHubApplication.Orders.Queries;
 namespace SmartTradeHub.Api.Controllers
 {
     [ApiController]
-    [Route("api/orders")]
+    [Route("api/[Controller]")]
     public class OrdersController : ControllerBase
     {
         private readonly OrderService _orderService;
@@ -67,7 +67,7 @@ namespace SmartTradeHub.Api.Controllers
 
             return Ok(dto);
         }
-
+         
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
